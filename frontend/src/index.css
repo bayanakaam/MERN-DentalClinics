@@ -1,0 +1,25 @@
+/* src/index.css */
+
+/* إعادة تعيين الأنماط الافتراضية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* أو أي خط تفضله */
+}
+
+:root {
+  /* الألوان الرئيسية من التصميم */
+  --background-dark: #1E202D;
+  --surface-dark: #2A2D3E;
+  --surface-glass: rgba(42, 45, 62, 0.8); /* للبطاقات الزجاجية */
+  --primary-blue: #00B8D9;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A9B4CC;
+  --border-color: #3A3D52;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+}

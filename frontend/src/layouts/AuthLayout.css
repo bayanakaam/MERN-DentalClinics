@@ -1,0 +1,57 @@
+/* src/layouts/AuthLayout.css */
+
+.auth-container {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-dark);
+  background-image: 
+    radial-gradient(circle at 15% 20%, var(--surface-dark) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, var(--surface-dark) 0%, transparent 40%);
+  overflow: hidden;
+}
+
+.auth-logo-background {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: calc(50% - 500px/2 - 367px);
+  top: calc(50% - 500px/2);
+  
+  /* 
+    هذا هو المسار الصحيح. يبدأ بـ '/' ويعني "من جذر الموقع".
+    Vite سيفهم أن هذا الملف موجود في مجلد public.
+  */
+  background-image: url('/logo.png'); 
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(-3px 4px 50px rgba(0, 0, 0, 0.6));
+  z-index: 1; /* ليكون خلف النموذج */
+}
+
+.auth-form-section {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10; /* للتأكد من أن النموذج فوق الشعار */
+}
+
+.auth-form-card {
+  background: var(--surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid var(--border-color);
+}

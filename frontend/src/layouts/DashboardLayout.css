@@ -1,0 +1,122 @@
+/* src/layouts/DashboardLayout.css */
+
+:root {
+  --sidebar-width: 260px;
+  --sidebar-width-collapsed: 80px;
+  --header-height: 70px;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+/* --- 1. الشريط الجانبي (Sidebar) --- */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--surface-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-logo {
+  width: 80px;
+  height: auto;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1.2rem; /* حجم الأيقونة */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: var(--surface-glass);
+  color: var(--text-light);
+}
+
+/* هذا النمط يتم تطبيقه على الرابط النشط حالياً */
+.sidebar-link.active {
+  background-color: var(--primary-blue);
+  color: white;
+  box-shadow: 0 4px 15px -5px var(--primary-blue);
+}
+
+.link-text {
+  margin-left: 20px;
+  font-size: 1rem; /* حجم النص */
+  font-weight: 500;
+}
+
+.sidebar-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  font-size: 2rem;
+  color: var(--text-muted);
+}
+
+.user-name {
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  color: var(--accent-red);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+
+/* --- 2. منطقة المحتوى الرئيسية --- */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* للسماح بالتمرير إذا كان المحتوى طويلاً */
+}
+
+.content-area {
+  padding: 30px;
+}

@@ -1,0 +1,119 @@
+.auth-form h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.auth-subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: var(--text-secondary);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.input-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+  background-color: #00A8C6;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.auth-link a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #ff4d4d;
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.role-selector {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.role-selector p {
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.role-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.role-button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* الحالة الافتراضية */
+  background-color: var(--surface-dark);
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+}
+
+.role-button.active {
+  /* الحالة النشطة */
+  background-color: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 15px rgba(0, 184, 217, 0.5);
+}
+
+.role-button:not(.active):hover {
+  border-color: var(--primary-blue);
+  color: var(--text-primary);
+}
