@@ -77,30 +77,30 @@ The project is organized into two main directories: `backend` and `frontend`.
 ```
 /dental-system
 |
-├── /backend
-|   ├── /config         # DB connection, file upload settings
-|   ├── /controllers    # Business logic for each route
-|   ├── /middleware     # Custom middleware (auth, error handling)
-|   ├── /models         # Mongoose schemas for the database
-|   ├── /routes         # API route definitions
-|   ├── /uploads        # Directory for storing uploaded files
-|   ├── node_modules
-|   ├── .env            # Environment variables (gitignored)
-|   └── server.js       # Server entry point
+├── backend/
+|   ├── config/
+|   ├── controllers/
+|   ├── middleware/
+|   ├── models/
+|   ├── routes/
+|   ├── uploads/
+|   ├── .env
+|   └── server.js
 |
-└── /frontend
-├── /src
-|   ├── /assets     # Images, icons, and global CSS
-|   ├── /components # Reusable UI components (buttons, tables, etc.)
-|   ├── /context    # Global state providers (e.g., AuthContext)
-|   ├── /hooks      # Custom React hooks
-|   ├── /layouts    # Page layouts (Dashboard, AuthLayout)
-|   ├── /pages      # Components representing full pages
-|   ├── /services   # API interaction logic (api.js, caseService.js)
-|   └── App.jsx     # Main component managing routing
-|   └── main.jsx    # React application entry point
-├── .env.local      # Environment variables for the frontend
-└── package.json
+└── frontend/
+    ├── src/
+    |   ├── assets/
+    |   ├── components/
+    |   ├── context/
+    |   ├── layouts/
+    |   ├── pages/
+    |   ├── services/
+    |   ├── App.jsx
+    |   └── main.jsx
+    ├── index.html
+    ├── package.json
+    └── vite.config.js
+
 ```
 
 
