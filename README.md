@@ -1,210 +1,186 @@
-# نظام إدارة عيادات ومختبرات الأسنان (Dental Clinic & Lab Management System)
+# Dental Clinic & Lab Management System
 
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" alt="Dental System Logo" width="200"/>
+  <strong>A full-stack MERN application designed to streamline the workflow between dental clinics and laboratories.</strong>
 </p>
 
 <p align="center">
-  <strong>نظام ويب متكامل مبني بتقنية MERN Stack لإدارة العلاقة بين أطباء الأسنان والمختبرات.</strong>
-</p>
-
-<p align="center">
-  <a href="#-الميزات-الرئيسية">الميزات</a> •
-  <a href="#-التقنيات-المستخدمة">التقنيات</a> •
-  <a href="#-هيكلية-المشروع">الهيكلية</a> •
-  <a href="#-إعداد-بيئة-العمل">الإعداد</a> •
-  <a href="#-واجهة-الـ-api-الخلفية-backend">API</a> •
-  <a href="#-خارطة-طريق-مستقبلية">خارطة الطريق</a>
+  <a href="#-key-features">Features</a> •
+  <a href="#-technologies-used">Tech Stack</a> •
+  <a href="#-project-structure">Structure</a> •
+  <a href="#-getting-started">Setup</a> •
+  <a href="#-api-endpoints">API</a> •
+  <a href="#-future-roadmap">Roadmap</a>
 </p>
 
 ---
 
-## 📜 نظرة عامة على المشروع
+## 📜 Project Overview
 
-هذا المشروع هو تطبيق ويب كامل (Full-Stack ) يهدف إلى رقمنة وأتمتة سير العمل بين أطباء الأسنان ومختبرات تصنيع تركيبات الأسنان. يسمح النظام للأطباء بإنشاء حالات طبية، وإرفاق ملفات تصميم (مثل STL/PLY)، وإرسالها كطلبات إلى المختبرات. من جانبهم، يمكن للمختبرات إدارة هذه الطلبات، وتحديث حالتها، وتحديد مواعيد التسليم، مما يوفر قناة تواصل فعالة ومنظمة بين الطرفين.
-
----
-
-## ✨ الميزات الرئيسية
-
-### 👨‍⚕️ **بوابة الطبيب (Doctor Portal)**
-- **إدارة المصادقة:** تسجيل حساب جديد وتسجيل الدخول بشكل آمن.
-- **إدارة المرضى:** إضافة وتتبع بيانات المرضى.
-- **إنشاء الحالات الطبية:**
-    - واجهة تفاعلية لاختيار الأسنان وتحديد نوع العلاج لكل سن.
-    - رفع ملفات التصميم ثلاثية الأبعاد (STL/PLY).
-    - إضافة ملاحظات تفصيلية.
-- **إدارة الطلبات:**
-    - إرسال الحالات كطلبات إلى مختبرات محددة.
-    - تتبع حالة الطلبات (Pending, Accepted, Finished, etc.).
-    - عرض قائمة الطلبات مع إمكانية الفرز والبحث.
-- **التقويم:** عرض مواعيد التسليم المتوقعة للطلبات على تقويم تفاعلي.
-- **التقييمات:** إمكانية تقييم المختبر بعد اكتمال الطلب.
-
-### 🔬 **بوابة المختبر (Lab Portal)**
-- **إدارة المصادقة:** تسجيل حساب جديد وتسجيل الدخول بشكل آمن.
-- **إدارة الطلبات الواردة:**
-    - عرض قائمة بالطلبات الجديدة من الأطباء.
-    - مراجعة تفاصيل كل طلب وتنزيل الملف المرفق.
-    - قبول أو رفض الطلبات.
-- **تحديث حالة الطلب:** تغيير حالة الطلب عبر دورة حياته (Accepted → In Progress → Finished).
-- **تحديد مواعيد التسليم:** تحديد تاريخ التسليم المتوقع عند قبول الطلب.
-- **إدارة التقييمات:** عرض التقييمات التي تم الحصول عليها من الأطباء.
+This project is a full-stack web application built to digitize and automate the workflow between dentists and dental fabrication labs. The system allows dentists to create detailed medical cases, attach 3D design files (e.g., STL, PLY ), and submit them as orders to labs. In turn, labs can manage these incoming orders, update their statuses, and set delivery dates, creating an efficient and organized communication channel between both parties.
 
 ---
 
-## 💻 التقنيات المستخدمة
+## ✨ Key Features
 
-### **الواجهة الخلفية (Backend)**
-- **[Node.js](https://nodejs.org/ ):** بيئة تشغيل JavaScript.
-- **[Express.js](https://expressjs.com/ ):** إطار عمل لبناء الـ API.
-- **[MongoDB](https://www.mongodb.com/ ):** قاعدة بيانات NoSQL لتخزين البيانات.
-- **[Mongoose](https://mongoosejs.com/ ):** مكتبة لنمذجة البيانات والتفاعل مع MongoDB.
-- **[JSON Web Tokens (JWT)](https://jwt.io/ ):** لإدارة المصادقة وحماية المسارات.
-- **[Bcrypt.js](https://github.com/dcodeIO/bcrypt.js ):** لتشفير كلمات المرور.
-- **[Multer](https://github.com/expressjs/multer ):** للتعامل مع رفع الملفات (File Uploads).
-- **[Dotenv](https://github.com/motdotla/dotenv ):** لتحميل متغيرات البيئة من ملف `.env`.
+### 👨‍⚕️ **Doctor Portal**
+- **Authentication:** Secure user registration and login.
+- **Patient Management:** Add and track patient information.
+- **Medical Case Creation:**
+    - An interactive UI to select teeth and assign specific treatments.
+    - Upload 3D design files (STL/PLY).
+    - Add detailed notes and comments.
+- **Order Management:**
+    - Submit cases as orders to specific labs.
+    - Track order statuses (Pending, Accepted, Finished, etc.).
+    - View a filterable and searchable list of all submitted orders.
+- **Calendar View:** A calendar to visualize expected delivery dates for all active orders.
+- **Reviews & Ratings:** Ability to rate and review a lab's service upon order completion.
 
-### **الواجهة الأمامية (Frontend)**
-- **[React.js](https://reactjs.org/ ):** مكتبة لبناء واجهات المستخدم.
-- **[Vite](https://vitejs.dev/ ):** أداة بناء سريعة لتحسين تجربة التطوير.
-- **[React Router](https://reactrouter.com/ ):** لإدارة التوجيه والتنقل بين الصفحات.
-- **[Axios](https://axios-http.com/ ):** لإجراء طلبات HTTP إلى الـ API.
-- **[Context API](https://reactjs.org/docs/context.html ):** لإدارة الحالة العامة (Global State) مثل حالة المصادقة.
-- **CSS Modules / Styled Components:** (اختر ما يناسبك) لتنسيق المكونات بشكل منظم.
+### 🔬 **Lab Portal**
+- **Authentication:** Secure user registration and login.
+- **Order Queue Management:**
+    - View a dashboard of all incoming orders from dentists.
+    - Review order details and download attached design files.
+    - Accept or deny new orders.
+- **Status Updates:** Progress orders through their lifecycle (e.g., Accepted → In Progress → Finished).
+- **Delivery Date Assignment:** Set an estimated delivery date upon accepting an order.
+- **Performance & Reviews:** View ratings and feedback received from doctors.
 
 ---
 
-## 📂 هيكلية المشروع
+## 💻 Technologies Used
 
-المشروع مقسم إلى مجلدين رئيسيين: `backend` و `frontend`.
+### **Backend**
+- **[Node.js](https://nodejs.org/ ):** JavaScript runtime environment.
+- **[Express.js](https://expressjs.com/ ):** Web framework for building the API.
+- **[MongoDB](https://www.mongodb.com/ ):** NoSQL database for data storage.
+- **[Mongoose](https://mongoosejs.com/ ):** ODM library for modeling and interacting with MongoDB.
+- **[JSON Web Tokens (JWT)](https://jwt.io/ ):** For managing authentication and securing routes.
+- **[Bcrypt.js](https://github.com/dcodeIO/bcrypt.js ):** For hashing user passwords.
+- **[Multer](https://github.com/expressjs/multer ):** Middleware for handling `multipart/form-data`, used for file uploads.
+- **[Dotenv](https://github.com/motdotla/dotenv ):** For loading environment variables from a `.env` file.
 
+### **Frontend**
+- **[React.js](https://reactjs.org/ ):** Library for building user interfaces.
+- **[Vite](https://vitejs.dev/ ):** A fast, modern build tool for an enhanced development experience.
+- **[React Router](https://reactrouter.com/ ):** For client-side routing and navigation.
+- **[Axios](https://axios-http.com/ ):** For making HTTP requests to the backend API.
+- **[Context API](https://reactjs.org/docs/context.html ):** For global state management (e.g., authentication state).
+- **[CSS Modules / Styled Components](https://styled-components.com/ ):** For scoped and organized component styling.
+
+---
+
+## 📂 Project Structure
+
+The project is organized into two main directories: `backend` and `frontend`.
+```
 /dental-system
 |
 ├── /backend
-|   ├── /config         # إعدادات الاتصال بقاعدة البيانات ورفع الملفات
-|   ├── /controllers    # منطق الأعمال (Business Logic) لكل مسار
-|   ├── /middleware     # الوسطاء (مثل حماية المسارات ومعالجة الأخطاء)
-|   ├── /models         # نماذج Mongoose لقاعدة البيانات
-|   ├── /routes         # تعريف مسارات الـ API
-|   ├── /uploads        # المجلد الذي يتم فيه تخزين الملفات المرفوعة
+|   ├── /config         # DB connection, file upload settings
+|   ├── /controllers    # Business logic for each route
+|   ├── /middleware     # Custom middleware (auth, error handling)
+|   ├── /models         # Mongoose schemas for the database
+|   ├── /routes         # API route definitions
+|   ├── /uploads        # Directory for storing uploaded files
 |   ├── node_modules
-|   ├── .env            # ملف متغيرات البيئة (غير مرفوع لـ Git)
-|   └── server.js       # نقطة انطلاق الخادم
+|   ├── .env            # Environment variables (gitignored)
+|   └── server.js       # Server entry point
 |
 └── /frontend
 ├── /src
-|   ├── /assets     # الصور، الأيقونات، وملفات CSS العامة
-|   ├── /components # المكونات القابلة لإعادة الاستخدام (أزرار، جداول، إلخ)
-|   ├── /context    # مزودات الحالة (مثل AuthContext)
-|   ├── /hooks      # الخطافات المخصصة (Custom Hooks)
-|   ├── /layouts    # تخطيطات الصفحات (مثل الداشبورد وصفحات المصادقة)
-|   ├── /pages      # المكونات التي تمثل صفحات كاملة
-|   ├── /services   # دوال التفاعل مع الـ API (api.js, caseService.js, etc.)
-|   └── App.jsx     # المكون الرئيسي الذي يدير التوجيه
-|   └── main.jsx    # نقطة انطلاق تطبيق React
-├── .env.local      # متغيرات البيئة للواجهة الأمامية
+|   ├── /assets     # Images, icons, and global CSS
+|   ├── /components # Reusable UI components (buttons, tables, etc.)
+|   ├── /context    # Global state providers (e.g., AuthContext)
+|   ├── /hooks      # Custom React hooks
+|   ├── /layouts    # Page layouts (Dashboard, AuthLayout)
+|   ├── /pages      # Components representing full pages
+|   ├── /services   # API interaction logic (api.js, caseService.js)
+|   └── App.jsx     # Main component managing routing
+|   └── main.jsx    # React application entry point
+├── .env.local      # Environment variables for the frontend
 └── package.json
+```
 
 
 ---
 
-## 🚀 إعداد بيئة العمل
+## 🚀 Getting Started
 
-لتشغيل المشروع على جهازك المحلي، اتبع الخطوات التالية:
+To run this project on your local machine, follow these steps.
 
-### **المتطلبات الأساسية**
-- **Node.js:** إصدار 16 أو أحدث.
-- **MongoDB:** إما نسخة محلية أو حساب على [MongoDB Atlas](https://www.mongodb.com/cloud/atlas ) (موصى به).
+### **Prerequisites**
+- **Node.js:** Version 16 or later.
+- **MongoDB:** A local instance or a cloud-hosted database from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas ) (recommended).
 
-### **1. إعداد الواجهة الخلفية (Backend)**
+### **1. Backend Setup**
 
 ```bash
-# 1. انتقل إلى مجلد الواجهة الخلفية
+# 1. Navigate to the backend directory
 cd backend
 
-# 2. قم بتثبيت الاعتماديات
+# 2. Install dependencies
 npm install
 
-# 3. أنشئ ملف .env في جذر مجلد backend وأضف المتغيرات التالية
-# استبدل <your_mongodb_connection_string> برابط الاتصال الخاص بك
+# 3. Create a .env file in the backend root and add the following variables
+# Replace <your_mongodb_connection_string> with your actual connection string
 MONGO_URI=<your_mongodb_connection_string>
 JWT_SECRET=your_super_secret_jwt_key
 PORT=5000
 
-# 4. قم بتشغيل الخادم
+# 4. Start the server
 npm start
+``` 
+The backend server should now be running on http://localhost:5000.
 
-يجب أن يعمل الخادم الآن على http://localhost:5000.
-# 1. افتح نافذة طرفية جديدة وانتقل إلى مجلد الواجهة الأمامية
+### **2. Frontend Setup**
+```bash
+# 1. Open a new terminal and navigate to the frontend directory
 cd frontend
 
-# 2. قم بتثبيت الاعتماديات
+# 2. Install dependencies
 npm install
 
-# 3. (اختياري) أنشئ ملف .env.local لتحديد عنوان الـ API
+# 3. (Optional ) Create a .env.local file to specify the API URL
 VITE_API_URL=http://localhost:5000/api
 
-# 4. قم بتشغيل خادم التطوير
+# 4. Start the development server
 npm run dev
+```
 
-يجب أن يعمل تطبيق React الآن على http://localhost:5173 (أو منفذ آخر يحدده Vite ).
-🌐 واجهة الـ API الخلفية (Backend)
-فيما يلي ملخص لأهم نقاط النهاية (Endpoints) في الـ API.
-المسار (Endpoint)
-الطريقة
-الوصف
-الوصول
-POST /api/auth/register
-POST
-تسجيل مستخدم جديد (طبيب أو مختبر)
-عام
-POST /api/auth/login
-POST
-تسجيل دخول مستخدم
-عام
-GET /api/cases
-GET
-جلب كل الحالات الخاصة بالطبيب المسجل دخوله
-طبيب فقط
-POST /api/cases
-POST
-إنشاء حالة طبية جديدة (مع رفع ملف)
-طبيب فقط
-GET /api/orders/my-doctor-orders
-GET
-جلب كل الطلبات الخاصة بالطبيب المسجل دخوله
-طبيب فقط
-POST /api/orders
-POST
-إنشاء طلب جديد من حالة طبية
-طبيب فقط
-GET /api/orders/lab-orders
-GET
-جلب كل الطلبات الواردة للمختبر المسجل دخوله
-مختبر فقط
-PUT /api/orders/:id/status
-PUT
-تحديث حالة طلب (قبول، رفض، إنهاء)
-مختبر فقط
-GET /api/labs
-GET
-جلب قائمة بجميع المختبرات المسجلة
-طبيب فقط
-GET /api/calendar
-GET
-جلب أحداث التقويم (مواعيد التسليم) للطبيب
-طبيب فقط
-POST /api/reviews
-POST
-إضافة تقييم جديد لطلب مكتمل
+The React application should now be running on http://localhost:5173 (or another port specified by Vite )
 
-🗺️ خارطة طريق مستقبلية
-هذا المشروع لديه إمكانيات كبيرة للتوسع. إليك بعض الأفكار لميزات مستقبلية:
- نظام إشعارات: إرسال إشعارات فورية (Real-time) عند تحديث حالة الطلب.
- لوحة تحكم للمسؤول (Admin): لإدارة المستخدمين ومراقبة النظام.
- نظام دردشة: للتواصل المباشر بين الطبيب والمختبر بخصوص طلب معين.
- تكامل مع بوابات الدفع: لإدارة الفواتير والمدفوعات بين الطرفين.
- تحليلات وتقارير: عرض إحصائيات حول عدد الحالات، متوسط وقت الإنجاز، إلخ.
- تحسين الواجهة: تحويل صفحة إنشاء الحالة إلى معالج متعدد الخطوات (Wizard).
-نأمل أن يكون هذا المشروع مفيداً كنقطة انطلاق لتطبيقات أكثر تعقيداً. المساهمات والاقتراحات مرحب بها دائماً!
+
+---
+
+## 🌐 API Endpoints
+Here is a summary of the main API endpoints.
+| Endpoint                     | Method | Description                                   | Access      |
+| ---------------------------- | ------ | --------------------------------------------- | ----------- |
+| `POST /api/auth/register`    | `POST` | Register a new user (Doctor or Lab)           | Public      |
+| `POST /api/auth/login`       | `POST` | Log in a user                                 | Public      |
+| `GET /api/cases`             | `GET`  | Get all cases for the logged-in doctor        | Doctor Only |
+| `POST /api/cases`            | `POST` | Create a new medical case (with file upload)  | Doctor Only |
+| `GET /api/orders`            | `GET`  | Get all orders for the logged-in user         | Doctor/Lab  |
+| `POST /api/orders`           | `POST` | Create a new order from a medical case        | Doctor Only |
+| `PUT /api/orders/:id/status` | `PUT`  | Update an order's status (accept, deny, etc.) | Lab Only    |
+| `GET /api/labs`              | `GET`  | Get a list of all registered labs             | Doctor Only |
+| `GET /api/calendar`          | `GET`  | Get calendar events (delivery dates)          | Doctor Only |
+| `POST /api/reviews`          | `POST` | Add a new review for a completed order        | Doctor Only |
+
+---
+
+
+## 🗺️ Future Roadmap
+
+This project has great potential for expansion. Here are some ideas for future features:
+
+- **Real-time Notifications:** Implement WebSockets to send instant notifications for order status updates.
+- **Admin Dashboard:** A dedicated portal for administrators to manage users and monitor system activity.
+- **Chat System:** A direct messaging feature for doctors and labs to communicate about specific orders.
+- **Payment Gateway Integration:** To manage invoices and payments between clinics and labs.
+- **Analytics & Reports:** Display statistics on case volume, average completion time, lab performance, etc.
+- **UI/UX Enhancements:** Convert the case creation page into a multi-step wizard for a better user experience.
+
+We hope this project serves as a useful starting point for more complex applications. Contributions and suggestions are always welcome!
